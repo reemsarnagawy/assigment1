@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 struct birth {
 int day;
 int month;
@@ -47,18 +48,11 @@ struct node *tail=NULL;
     //need this if there is no node present in linked list at all
     if(head==NULL){
         head = newNode;
-        head = tail;
+        tail=head;
         return;
     }
    tail->next=newNode;
     tail=newNode;
-
-//    struct node* temp = head;
-//
-//    while(temp->next!=NULL)
-//        temp = temp->next;
-//
-//    temp->next = newNode;
 }
 int calcSize(struct node *num){
     int size=0;
@@ -124,86 +118,9 @@ void displayList()
 }
 
 
-int main()
-{
 
-    int n;
-    printf("enter the size of list\n");
-    scanf("%d" , &n);
-    for(int i=0; i<n; i++)
-    { struct student x;
-    printf("if you want to insert in first press 1\n");
-    printf( "if you want to insert in End press 2\n");
-    printf("if you want to insert in middle press 3\n");
-    int y;
-    scanf("%d" , &y);
 
-                if(y==1)
-                {
-                    printf("Enter ID: ");
-                scanf("%d", &x.id);
-                printf("Enter name: ");
-                scanf("%s", &x.name);
-                fflush(stdin);
-                printf("Enter score: ");
-                scanf("%d",&x.score_last_year);
-                fflush(stdin);
-                printf("Enter day: ");
-                scanf("%d", &x.bir.day);
-                fflush(stdin);
-                printf("Enter month: ");
-                scanf("%d", &x.bir.month);
-                printf("Enter year: ");
-                scanf("%d", &x.bir.year);
-                fflush(stdin);
-                    insert_first( x);
-                }
-                else if(y==2)
-                {printf("Enter ID: ");
-                scanf("%d", &x.id);
-                printf("Enter name: ");
-                scanf("%s", &x.name);
-                fflush(stdin);
-                printf("Enter score: ");
-                scanf("%d",&x.score_last_year);
-                printf("Enter day: ");
-                scanf("%d", &x.bir.day);
-                printf("Enter month: ");
-                scanf("%d", &x.bir.month);
-                printf("Enter year: ");
-                scanf("%d", &x.bir.year);
-                fflush(stdin);
-                    insert_END(x);
-                }
-                else if(y==3)
-                {printf("Enter ID: ");
-                scanf("%d", &x.id);
-                printf("Enter name: ");
-                scanf("%s", &x.name);
-                fflush(stdin);
-                printf("Enter score: ");
-                scanf("%d",&x.score_last_year);
-                printf("Enter day: ");
-                scanf("%d", &x.bir.day);
-                printf("Enter month: ");
-                scanf("%d", &x.bir.month);
-                printf("Enter year: ");
-                scanf("%d", &x.bir.year);
-                fflush(stdin);
-                    int u;
-                    printf("enter the position which want to insert in it of list\n");
-                    scanf("%d" , &u);
-                    insert_middle(u , x);
-                }
-                else {
-                printf("you must enter a correct number\n");
-                i--;}
 
-    }
-    displayList();
-
-       return 0;
-    }
 void dynamic_array()
  {   struct student *x;
  struct student *y;
@@ -233,6 +150,21 @@ void dynamic_array()
      
         
     }
+            for(int i=0;i<n;i++){
+printf("name of student %d\n",i+1);
+            printf("%s\n",x[i].firstName);
+            printf("id of student %d\n",i+1);
+            printf("%d\n",x[i].ID);
+            printf("score of student %d\n",i+1);
+              printf("%d\n",x[i].score);
+              printf("birthday of student %d\n",i+1);
+                printf("%d\n",x[i].bir.day);
+                printf("month of student %d\n",i+1);
+                  printf("%d\n",x[i].bir.month);
+                   printf("year of student %d\n",i+1);
+                    printf("%d\n",x[i].bir.year);
+        }
+ 
                printf("if you want to insert at the beginning press 1 \n");
 printf("if you want to insert at the midle press 2 \n");
 printf("if you want to insert at the end press 3 \n");
@@ -250,7 +182,7 @@ if(k==1)
      scanf("%s", y[0].firstName);
         printf("Enter ID of new student  ");
         scanf("%d", &y[0].ID);
-        printf("Enter score of the last year of new student  ");
+        printf("Enter score of new student  ");
         scanf("%d", &y[0].score);
          printf("Enter day of birth of new student  ");
            scanf("%d", &y[0].bir.day);
@@ -272,7 +204,7 @@ if(k==1)
      scanf("%s", y[n/2].firstName);
         printf("Enter ID of new student  ");
         scanf("%d", &y[n/2].ID);
-        printf("Enter score of the last year of new student  ");
+        printf("Enter score of new student  ");
         scanf("%d", &y[n/2].score);
          printf("Enter day of birth of new student  ");
            scanf("%d", &y[n/2].bir.day);
@@ -293,7 +225,7 @@ if(k==1)
      scanf("%s", y[n].firstName);
         printf("Enter ID of new student  ");
         scanf("%d", &y[n].ID);
-        printf("Enter score of the last year of new student  ");
+        printf("Enter score of new student  ");
         scanf("%d", &y[n].score);
          printf("Enter day of birth of new student  ");
            scanf("%d", &y[n].bir.day);
@@ -303,18 +235,173 @@ if(k==1)
         scanf("%d", &y[n].bir.year);
                   
         }
-        
+        for(int i=0;i<=n;i++){
+printf("name of student %d\n",i+1);
+            printf("%s\n",y[i].firstName);
+            printf("id of student %d\n",i+1);
+            printf("%d\n",y[i].ID);
+            printf("score of student %d\n",i+1);
+              printf("%d\n",y[i].score);
+              printf("birthday of student %d\n",i+1);
+                printf("%d\n",y[i].bir.day);
+                printf("month of student %d\n",i+1);
+                  printf("%d\n",y[i].bir.month);
+                   printf("year of student %d\n",i+1);
+                    printf("%d\n",y[i].bir.year);
+        }
+ 
 
 
  }
 
 
+int main()
+{
+ printf("how are you:\n");
+while (1)
+    { struct student x;
+    printf("if you want to insert in first press 1\n");
+    printf( "if you want to insert in End press 2\n");
+    printf("if you want to insert in middle press 3\n");
+    printf("if you want to display press 4\n");
+    printf("if you want to Exit press 5\n");
+    printf("if you want to calc time to insert element in first press 6\n");
+    printf("if you want to calc time to insert element in last press 7\n");
+    printf("if you want to calc time to insert element in position press 8\n");
+    int y;
+    scanf("%d" , &y);
+    switch(y){
+        case 1: printf("Enter ID: ");
+                scanf("%d", &x.id);
+                printf("Enter name: ");
+                scanf("%s", &x.name);//you must enter (_)between the first and second name
+                fflush(stdin);
+                printf("Enter score: ");
+                scanf("%d",&x.score_last_year);
+                fflush(stdin);
+                printf("Enter day: ");
+                scanf("%d", &x.bir.day);
+                fflush(stdin);
+                printf("Enter month: ");
+                scanf("%d", &x.bir.month);
+                printf("Enter year: ");
+                scanf("%d", &x.bir.year);
+                fflush(stdin);
+                    insert_first( x);
+                    break;
+        case 2: printf("Enter ID: ");
+                scanf("%d", &x.id);
+                printf("Enter name: ");//you must enter (_)between the first and second name
+                scanf("%s", &x.name);
+                fflush(stdin);
+                printf("Enter score: ");
+                scanf("%d",&x.score_last_year);
+                printf("Enter day: ");
+                scanf("%d", &x.bir.day);
+                printf("Enter month: ");
+                scanf("%d", &x.bir.month);
+                printf("Enter year: ");
+                scanf("%d", &x.bir.year);
+                fflush(stdin);
+                    insert_END(x);
+                    break;
+        case 3: printf("Enter ID: ");
+                scanf("%d", &x.id);
+                printf("Enter name: ");//you must enter (_)between the first and second name
+                scanf("%s", &x.name);
+                fflush(stdin);
+                printf("Enter score: ");
+                scanf("%d",&x.score_last_year);
+                printf("Enter day: ");
+                scanf("%d", &x.bir.day);
+                printf("Enter month: ");
+                scanf("%d", &x.bir.month);
+                printf("Enter year: ");
+                scanf("%d", &x.bir.year);
+                fflush(stdin);
+                    int u;
+                    printf("enter the position which want to insert in it of list\n");
+                    scanf("%d" , &u);
+                    insert_middle(u , x);
+                    break;
+        case 4: displayList();
+                break;
+        case 5: exit(0); 
+        case 6:  printf("Enter ID: ");
+                scanf("%d", &x.id);
+                printf("Enter name: ");
+                scanf("%s", &x.name);//you must enter (_)between the first and second name
+                fflush(stdin);
+                printf("Enter score: ");
+                scanf("%d",&x.score_last_year);
+                fflush(stdin);
+                printf("Enter day: ");
+                scanf("%d", &x.bir.day);
+                fflush(stdin);
+                printf("Enter month: ");
+                scanf("%d", &x.bir.month);
+                printf("Enter year: ");
+                scanf("%d", &x.bir.year);
+                fflush(stdin);
+                int start=clock();
+                insert_first( x);
+                int finish=clock();
+                printf("the time taken by linked list to insert in the firist=%f",(double)(finish-start)/CLOCKS_PER_SEC);
+                printf("                                                       ");
+                break;
+        case 7: printf("Enter ID: ");
+                scanf("%d", &x.id);
+                printf("Enter name: ");//you must enter (_)between the first and second name
+                scanf("%s", &x.name);
+                fflush(stdin);
+                printf("Enter score: ");
+                scanf("%d",&x.score_last_year);
+                printf("Enter day: ");
+                scanf("%d", &x.bir.day);
+                printf("Enter month: ");
+                scanf("%d", &x.bir.month);
+                printf("Enter year: ");
+                scanf("%d", &x.bir.year);
+                fflush(stdin);
+                int start2=clock();
+                insert_END(x);
+                int finish2=clock();
+                printf("the time taken by linked list to insert in the End=%f",(double)(finish2-start2)/CLOCKS_PER_SEC);
+                printf("                                                       ");
+                break;
+        case 8:  printf("Enter ID: ");
+                scanf("%d", &x.id);
+                printf("Enter name: ");//you must enter (_)between the first and second name
+                scanf("%s", &x.name);
+                fflush(stdin);
+                printf("Enter score: ");
+                scanf("%d",&x.score_last_year);
+                printf("Enter day: ");
+                scanf("%d", &x.bir.day);
+                printf("Enter month: ");
+                scanf("%d", &x.bir.month);
+                printf("Enter year: ");
+                scanf("%d", &x.bir.year);
+                fflush(stdin);
+                int u1;
+                printf("enter the position which want to insert in it of list\n");
+                scanf("%d" , &u1);
+                int start3=clock();
+                insert_middle(u1 , x);
+                int finish3=clock();
+                printf("the time taken by linked list to insert in the position 3=%f",(double)(finish3-start3)/CLOCKS_PER_SEC);
+                printf("                                                       ");
+                break;            
+                    
+        default:printf("you must enter a correct number\n");
 
-int main() { 
-    printf("how are you:\n");
-int start=clock();
+    }
+     int start=clock();
 dynamic_array();
 int finish=clock();
 printf("the time taken by dynamic array = %f",(double)(finish-start)/CLOCKS_PER_SEC);
 return 0;
 }
+    }
+
+
