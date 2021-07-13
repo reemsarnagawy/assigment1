@@ -118,8 +118,146 @@ void displayList()
 }
 
 
+
+
+
+void dynamic_array()
+ {   struct student *x;
+ struct student *y;
+    int i;
+    printf("enter size of array ");
+    scanf("%d",&n);
+     x =(struct student*) malloc(n*sizeof(struct student));
+
+    for( i=0;i<n;i++){
+        printf("Enter name of student number %d  ",i+1);
+        scanf("%s", x[i].firstName);
+        printf("Enter ID of student number %d  ",i+1);
+        scanf("%d", &x[i].ID);
+        printf("Enter score of student number %d  ",i+1);
+        scanf("%d", &x[i].score);
+         printf("Enter day of birth of student number %d  ",i+1);
+           scanf("%d", &x[i].bir.day);
+         printf("Enter month of birth of student number %d  ",i+1);
+        scanf("%d", &x[i].bir.month);
+         printf("Enter year of birth of student number %d  ",i+1);
+        scanf("%d", &x[i].bir.year);}
+  int k,z;
+    y =(struct student*) realloc(x,(n+1)*sizeof(struct student));
+    for(int i=0;i<n;i++)
+    {
+        y[i]= x[i];
+     
+        
+    }
+            for(int i=0;i<n;i++){
+printf("name of student %d\n",i+1);
+            printf("%s\n",x[i].firstName);
+            printf("id of student %d\n",i+1);
+            printf("%d\n",x[i].ID);
+            printf("score of student %d\n",i+1);
+              printf("%d\n",x[i].score);
+              printf("birthday of student %d\n",i+1);
+                printf("%d\n",x[i].bir.day);
+                printf("month of student %d\n",i+1);
+                  printf("%d\n",x[i].bir.month);
+                   printf("year of student %d\n",i+1);
+                    printf("%d\n",x[i].bir.year);
+        }
+ 
+               printf("if you want to insert at the beginning press 1 \n");
+printf("if you want to insert at the midle press 2 \n");
+printf("if you want to insert at the end press 3 \n");
+      scanf("%d",&k);
+       int m=n+1;
+if(k==1)
+{z=0;
+  for(i=n+1;i>0;i--)
+     {
+
+       y[i]=y[i-1];
+
+     }
+     printf("Enter name of new student  ");
+     scanf("%s", y[0].firstName);
+        printf("Enter ID of new student  ");
+        scanf("%d", &y[0].ID);
+        printf("Enter score of new student  ");
+        scanf("%d", &y[0].score);
+         printf("Enter day of birth of new student  ");
+           scanf("%d", &y[0].bir.day);
+         printf("Enter month  of new student  ");
+        scanf("%d", &y[0].bir.month);
+         printf("Enter year of new student  ");
+        scanf("%d", &y[0].bir.year);
+    
+}
+       else if(k==2)
+       {
+  for(i=n+1;i>(n/2);i--)
+     {
+
+       y[i]=y[i-1];
+
+     }
+      printf("Enter name of new student  ");
+     scanf("%s", y[n/2].firstName);
+        printf("Enter ID of new student  ");
+        scanf("%d", &y[n/2].ID);
+        printf("Enter score of new student  ");
+        scanf("%d", &y[n/2].score);
+         printf("Enter day of birth of new student  ");
+           scanf("%d", &y[n/2].bir.day);
+         printf("Enter month  of new student  ");
+        scanf("%d", &y[n/2].bir.month);
+         printf("Enter year of new student  ");
+        scanf("%d", &y[n/2].bir.year);
+                
+       }
+        else{
+  for(i=n+1;i>n;i--)
+     {
+
+       y[i]=y[i-1];
+
+     }
+      printf("Enter name of new student  ");
+     scanf("%s", y[n].firstName);
+        printf("Enter ID of new student  ");
+        scanf("%d", &y[n].ID);
+        printf("Enter score of new student  ");
+        scanf("%d", &y[n].score);
+         printf("Enter day of birth of new student  ");
+           scanf("%d", &y[n].bir.day);
+         printf("Enter month  of new student  ");
+        scanf("%d", &y[n].bir.month);
+         printf("Enter year of new student  ");
+        scanf("%d", &y[n].bir.year);
+                  
+        }
+        for(int i=0;i<=n;i++){
+printf("name of student %d\n",i+1);
+            printf("%s\n",y[i].firstName);
+            printf("id of student %d\n",i+1);
+            printf("%d\n",y[i].ID);
+            printf("score of student %d\n",i+1);
+              printf("%d\n",y[i].score);
+              printf("birthday of student %d\n",i+1);
+                printf("%d\n",y[i].bir.day);
+                printf("month of student %d\n",i+1);
+                  printf("%d\n",y[i].bir.month);
+                   printf("year of student %d\n",i+1);
+                    printf("%d\n",y[i].bir.year);
+        }
+ 
+
+
+ }
+
+
 int main()
 {
+ printf("how are you:\n");
 while (1)
     { struct student x;
     printf("if you want to insert in first press 1\n");
@@ -258,153 +396,12 @@ while (1)
         default:printf("you must enter a correct number\n");
 
     }
-    }
-  return 0;}
-
-
-
-
-
-void dynamic_array()
- {   struct student *x;
- struct student *y;
-    int i;
-    printf("enter size of array ");
-    scanf("%d",&n);
-     x =(struct student*) malloc(n*sizeof(struct student));
-
-    for( i=0;i<n;i++){
-        printf("Enter name of student number %d  ",i+1);
-        scanf("%s", x[i].firstName);
-        printf("Enter ID of student number %d  ",i+1);
-        scanf("%d", &x[i].ID);
-        printf("Enter score of student number %d  ",i+1);
-        scanf("%d", &x[i].score);
-         printf("Enter day of birth of student number %d  ",i+1);
-           scanf("%d", &x[i].bir.day);
-         printf("Enter month of birth of student number %d  ",i+1);
-        scanf("%d", &x[i].bir.month);
-         printf("Enter year of birth of student number %d  ",i+1);
-        scanf("%d", &x[i].bir.year);}
-  int k,z;
-    y =(struct student*) realloc(x,(n+1)*sizeof(struct student));
-    for(int i=0;i<n;i++)
-    {
-        y[i]= x[i];
-     
-        
-    }
-            for(int i=0;i<n;i++){
-printf("name of student %d\n",i+1);
-            printf("%s\n",x[i].firstName);
-            printf("id of student %d\n",i+1);
-            printf("%d\n",x[i].ID);
-            printf("score of student %d\n",i+1);
-              printf("%d\n",x[i].score);
-              printf("birthday of student %d\n",i+1);
-                printf("%d\n",x[i].bir.day);
-                printf("month of student %d\n",i+1);
-                  printf("%d\n",x[i].bir.month);
-                   printf("year of student %d\n",i+1);
-                    printf("%d\n",x[i].bir.year);
-        }
- 
-               printf("if you want to insert at the beginning press 1 \n");
-printf("if you want to insert at the midle press 2 \n");
-printf("if you want to insert at the end press 3 \n");
-      scanf("%d",&k);
-       int m=n+1;
-if(k==1)
-{z=0;
-  for(i=n+1;i>0;i--)
-     {
-
-       y[i]=y[i-1];
-
-     }
-     printf("Enter name of new student  ");
-     scanf("%s", y[0].firstName);
-        printf("Enter ID of new student  ");
-        scanf("%d", &y[0].ID);
-        printf("Enter score of new student  ");
-        scanf("%d", &y[0].score);
-         printf("Enter day of birth of new student  ");
-           scanf("%d", &y[0].bir.day);
-         printf("Enter month  of new student  ");
-        scanf("%d", &y[0].bir.month);
-         printf("Enter year of new student  ");
-        scanf("%d", &y[0].bir.year);
-    
-}
-       else if(k==2)
-       {
-  for(i=n+1;i>(n/2);i--)
-     {
-
-       y[i]=y[i-1];
-
-     }
-      printf("Enter name of new student  ");
-     scanf("%s", y[n/2].firstName);
-        printf("Enter ID of new student  ");
-        scanf("%d", &y[n/2].ID);
-        printf("Enter score of new student  ");
-        scanf("%d", &y[n/2].score);
-         printf("Enter day of birth of new student  ");
-           scanf("%d", &y[n/2].bir.day);
-         printf("Enter month  of new student  ");
-        scanf("%d", &y[n/2].bir.month);
-         printf("Enter year of new student  ");
-        scanf("%d", &y[n/2].bir.year);
-                
-       }
-        else{
-  for(i=n+1;i>n;i--)
-     {
-
-       y[i]=y[i-1];
-
-     }
-      printf("Enter name of new student  ");
-     scanf("%s", y[n].firstName);
-        printf("Enter ID of new student  ");
-        scanf("%d", &y[n].ID);
-        printf("Enter score of new student  ");
-        scanf("%d", &y[n].score);
-         printf("Enter day of birth of new student  ");
-           scanf("%d", &y[n].bir.day);
-         printf("Enter month  of new student  ");
-        scanf("%d", &y[n].bir.month);
-         printf("Enter year of new student  ");
-        scanf("%d", &y[n].bir.year);
-                  
-        }
-        for(int i=0;i<=n;i++){
-printf("name of student %d\n",i+1);
-            printf("%s\n",y[i].firstName);
-            printf("id of student %d\n",i+1);
-            printf("%d\n",y[i].ID);
-            printf("score of student %d\n",i+1);
-              printf("%d\n",y[i].score);
-              printf("birthday of student %d\n",i+1);
-                printf("%d\n",y[i].bir.day);
-                printf("month of student %d\n",i+1);
-                  printf("%d\n",y[i].bir.month);
-                   printf("year of student %d\n",i+1);
-                    printf("%d\n",y[i].bir.year);
-        }
- 
-
-
- }
-
-
-
-int main() { 
-    printf("how are you:\n");
-int start=clock();
+     int start=clock();
 dynamic_array();
 int finish=clock();
 printf("the time taken by dynamic array = %f",(double)(finish-start)/CLOCKS_PER_SEC);
 return 0;
 }
+    }
+
+
